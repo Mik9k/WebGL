@@ -1,0 +1,70 @@
+body {
+	background-color: #3b8bf9;
+	display: none;
+	padding: 0px;
+	margin: 0px;
+	background-image: url('../icons/worldwide.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 920px;
+}
+
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+a:hover{
+	color: red;
+	cursor: pointer;
+}
+
+.title {
+	font-family: 'Shadows Into Light', cursive;
+	font-weight: bold;
+	font-size: 64px;
+	/* display: none; */
+	border-bottom: solid white 10px;
+}
+
+.title>small {
+	font-size: 42px;
+}
+
+div.row>h2 {
+	font-family: 'Shadows Into Light', cursive;
+	font-weight: bold;
+	font-size: 42px;
+}
+
+.modes-list {
+	font-family: 'Shadows Into Light', cursive;
+	background: none;
+	border: none;
+	margin: 5px;
+	color: white;
+}
+
+.modes-list:hover {
+	color: red;
+	border-bottom: solid red;
+	padding-left: 42px;
+}
+
+#character div>p {
+	font-family: 'Shadows Into Light', cursive;
+	color: white;
+}
+
+@-webkit-keyframes slide {
+	100% {
+		left: 0;
+	}
+}
+
+@keyframes slide {
+	100% {
+		left: 0;
+	}
+}
