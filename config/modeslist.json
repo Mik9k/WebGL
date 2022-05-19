@@ -1,0 +1,35 @@
+{
+    "modes" : [
+        {
+            "mode": "arcade",
+            "href": "arcade.html",
+            "text": "ARCADE MODE"
+        },
+        { 
+            "mode": "versus",
+            "href": "#",
+            "text": "VERSUS MODE"
+        },
+        { 
+            "mode": "traning",
+            "href": "#",
+            "text": "TRANING MODE"
+        },
+        { 
+            "mode": "settings",
+            "href": "#",
+            "text": "SETTINGS"
+        },
+        { 
+            "mode": "session",
+            "href": "#",
+            "text": "LOGIN"
+        },
+        { 
+            "mode": "start",
+            "href": "#",
+            "text": "SIGN IN" 
+        }
+    
+    ]
+}

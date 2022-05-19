@@ -1,5 +1,61 @@
 <?php
-class User extends Database{
+
+class UserModel{
+
+	private $conn;
+
+	public function __construct() {
+		$this->conn = mysqli_connect(
+			constant('servername'),
+			constant('username'),
+			constant('pwd'),
+			constant('dbname')
+		);
+
+		 if(!$this->conn){
+			die("Connection failed: ".mysqli_connect_error());	
+		 }
+	}
+
+	private $email;
+	private $nickname;
+	private $score;
+
+	public function getUser($email){
+
+		$sql = "select * from PLAYER where EMAIL = '".$email."'";
+		$result = mysqli_query($this->conn, $sql);
+
+		if(mysqli_num_rows($result) > 0){
+			if($row = mysqli_fetch_assoc($result)){
+				$this->email = $row['EMAIL'];
+				$this->nickname = $row['NICKNAME'];
+				$this->score = $row['SOCRE'];
+				$this->country = $row['CONTRY'];
+
+
+				mysqli_close($this->conn);
+
+				return true;
+			}
+		}
+
+		return false;
+
+	}
+
+	public function serialize(){
+		return array(
+			'EMAIL' => $this->email,
+			'NICKNAME' => $this->nickname,
+			'SCORE' => $this->score,
+			'COUNTRY' => $this->country
+		);
+	}
+
+}
+
+/* class User extends Database{
 	public function __construct(){
 		parent::__construct();
 	}
@@ -58,5 +114,5 @@ class User extends Database{
 		
 	}
 			
-}
+} */
 ?>

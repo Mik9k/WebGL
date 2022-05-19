@@ -1,4 +1,34 @@
-$('document').ready(function () {
+
+$('document').ready(function() {
+
+    const spinner = $('.container');
+
+    getUser();
+
+})
+
+function getUser(){
+    $.get('http://localhost:8080/menu/getUser', function(data, stat){
+        $('#spinner').remove();
+        data = JSON.parse(data);
+        ({ player, modes } = data);
+        const user = new Player(player.EMAIL, player.NICKNAME, player.SCORE, player.COUNTRY);
+        console.log(user);
+        console.log(modes);
+    })
+}
+
+class Player{
+    constructor(_email, _nickname, _score, _contry){
+        this.email = _email;
+        this.score = _score;
+        this.nickname = _nickname;
+        this.contru = _contry;
+    }
+}
+
+
+/* $('document').ready(function () {
     $('#preview > button').hide();
     // $('.container-expand-lg').fadeIn(3000);
 
@@ -49,4 +79,4 @@ $('document').ready(function () {
         }
     })
 
-})
+}) */
