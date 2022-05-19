@@ -21,7 +21,7 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-		<link rel="stylesheet" href="<?php echo 'http://localhost/figterjam/assets/css/index.css' ?>">
+		<link rel="stylesheet" href="<?php echo 'http://23.22.80.119/figterjam/assets/css/index.css' ?>">
 	<title>Fighter Jam | Animal Style</title>
 
 </head>
@@ -91,7 +91,7 @@
 	<script src="../libs/game.js"></script>
 	<script src="../libs/inflate.min.js"></script>
 	<script src="../libs/game.js"></script> -->
-<script src="<?php echo 'http://localhost/figterjam/assets/js/index.js' ?>"></script>
+<script src="<?php echo 'http://23.22.80.119/figterjam/assets/js/index.js' ?>"></script>
 
 <script>
 	const menuContainer = document.querySelector('#menu > div.col-3');
