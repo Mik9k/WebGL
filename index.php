@@ -27,7 +27,12 @@
 </head>
 
 <body>
-	<div class="container-expand-lg">
+	<!-- SPINNER LOAD -->
+	<div class="container vh-100 d-flex justify-content-center">
+		<div class="spinner-border my-auto h1 text-light" style="width: 10rem; height: 10rem;" role="status">
+		</div>
+	</div>
+	<div class="container-expand-lg d-none">
 		<div class="col-12">
 			<div class="m-5 row">
 				<h1 class="text-white text-center title">
@@ -54,8 +59,6 @@
 							<button type="button" style="font-family: 'Shadows Into Light', cursive" class="text-white fs-bold fs-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 								LOGIN
 							</button>
-
-
 						</div>
 					</div>
 				</div>
@@ -85,7 +88,7 @@
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	<script src="../libs/three.min.js"></script>
+	<!-- <script src="../libs/three.min.js"></script> -->
 	<!-- <script src="../libs/three.min.js"></script>
 	<script src="../libs/FBXLoader.js"></script>
 	<script src="../libs/game.js"></script>
@@ -157,16 +160,13 @@
 
 	];
 
-	if(menu.dataset.user != ''){
-		modes.pop();
-		document.querySelector('button').remove();
-	}
-
-	let ul = ULNode();
-	const items = modes.map(ItemsNodes);
-
-	ul.append(...items);
-	menuContainer.append(ul);
+	$.ajax({
+		URL: 'http://22.23.80.119/figterjam/menu.php',
+		type: 'GET',
+		success: function(res){
+			console.log(JSON.parse(res));
+		}
+	})
 
 </script>
 

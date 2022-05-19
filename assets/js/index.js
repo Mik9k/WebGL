@@ -1,13 +1,13 @@
 $('document').ready(function () {
     $('#preview > button').hide();
-    $('body').fadeIn(3000);
+    // $('.container-expand-lg').fadeIn(3000);
 
     //const menu = new Menu($('#character'), '../assets/character/meshes/Boxing.fbx', '');
 
 
     $('.modes-list').hover(function () {
-        /* const soundfx = new Audio('../soundfx/select-tiem.wav');
-        soundfx.play(); */
+        const soundfx = new Audio('../soundfx/select-tiem.wav');
+        soundfx.play();
         switch (this.getAttribute('mode')) {
             case 'arcade':
                 $('#character div > p').text('This game mode is for those who want to have a good time, defeat their greatest enemies one after another to win the title of world champion, the most courageous fighter of all time.');
