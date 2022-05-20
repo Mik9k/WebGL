@@ -1,20 +1,20 @@
-class Jaden {
-    constructor(scene, {health, name, rage ,healup, speed}) {
+class Character{
+    constructor(scene, anims = [], model, animpath, side = 0, name){
+        this.scene = scene;
 
-        this.ui = {
+        this.name = name;
+
+        this.ui = {/* 
             health,
-            name,
-            percent: 100,
+            name, */
+            percent: 100/* ,
             rage,
             healup,
-            speed
+            speed */
         }
-
-        this.scene = scene;
 
         this.damagePercentage = 1;
         this.speed = 80;
-
 
         this.frontBlock = false;
         this.isPunching= false;
@@ -23,20 +23,10 @@ class Jaden {
         this.player = {};
         this.animations = {};
 
-        this.health = 0;
-
-
-        this.anims = ['Walking', 'Walking Backwards', 'Lead Jab', 'Roundhouse Kick'];
-
-        this.model = `assets/character/Jaden/Mesh/ybot.fbx`;
-        this.animPath = `assets/character/Jaden/Anims`;
-
-        this.colidders = [
-            new THREE.Vector3(0, 0, 1), //FRONT VECTOR
-            new THREE.Vector3(1, 0, 0), //RIGHT VECTOR
-            new THREE.Vector3(0, 0, -1), //BACK VECTOR
-            new THREE.Vector3(-1, 0, 0) //LEFT VECTOR
-        ];
+        this.anims = anims;
+        this.model = model;
+        this.animPath = animpath;
+        this.side = side
 
         this.raycaster = new THREE.Raycaster();
 
@@ -44,22 +34,21 @@ class Jaden {
 
         //BOX COLIDER
         this.box;
-
     }
 
     initColiderBox(scene, pos = new THREE.Vector3(0, 0, 0),) {
 
-        const Jaden = this;
+        const character = this;
 
         const geometry = new THREE.BoxGeometry(100, 200, 100);
         const material = new THREE.MeshBasicMaterial({ color: 0x222222, wireframe: true });
 
-        Jaden.box = new THREE.Mesh(geometry, material);
+        character.box = new THREE.Mesh(geometry, material);
 
         this.box.name = 'Jaden Colider Box'
 
-        Jaden.box.position.set(pos.x, (pos.y + 100), pos.z);
-        scene.add(Jaden.box);
+        character.box.position.set(pos.x, (pos.y + 100), pos.z);
+        scene.add(character.box);
 
     }
 
@@ -87,13 +76,13 @@ class Jaden {
     }
 
     load(scene, pos = 0, rot = 0) {
-        const Jaden = this;
+        const character = this;
         const loader = new THREE.FBXLoader();
-        loader.load(Jaden.model, function (object) {
+        loader.load(character.model, function (object) {
 
             object.mixer = new THREE.AnimationMixer(object);
-            Jaden.player.mixer = object.mixer;
-            Jaden.player.root = object.mixer.getRoot();
+            character.player.mixer = object.mixer;
+            character.player.root = object.mixer.getRoot();
 
             object.name = 'jaden';
             object.traverse(function (child) {
@@ -107,15 +96,16 @@ class Jaden {
             object.rotation.y = rot;
             object.translateZ(pos);
             scene.add(object);
-            Jaden.player.object = object;
-            Jaden.player.mixer.clipAction(object.animations[0]).play();
-            Jaden.animations.Idle = object.animations[0];
+            character.player.object = object;
+            character.player.mixer.clipAction(object.animations[0]).play();
+            character.animations.Idle = object.animations[0];
 
             //INIT UI PLAYER
-            Jaden.ui.name.textContent = 'Jaden Huga';
-            Jaden.ui.health.className += ' w-100'
+            const name = document.querySelector(`#character-${character.side}`);
+            const health = document.querySelector(`#character-${character.side}-h`);
+            name.textContent = character.name;
 
-            Jaden.loadNextAnim(loader);
+            character.loadNextAnim(loader);
         })
     }
 
@@ -165,6 +155,18 @@ class Jaden {
             if (this.action != 'Roundhouse Kick') this.action = 'Roundhouse Kick';
         }
 
+    }
+
+    isColiding(objects){
+        let raycaster = new THREE.Raycaster();
+        const pos = this.player.object.position.clone();
+        
+        raycaster.set(pos, new THREE.Vector3(0, 0, 1));
+        let coliders = raycaster.intersectObjects(objects, true);
+
+        if(coliders.length > 0){
+            console.log(coliders);
+        }
     }
 
     forward(dt, { objects, enemy }) {
@@ -296,7 +298,7 @@ class Jaden {
 
         if(this.health <= 1){
             this.ui.percent -= percent * 25;
-            this.ui.health.className = `progress-bar bg-danger w-${this.ui.percent}`;
+            document.querySelector(`#character-${this.side}h`).className = `progress-bar bg-danger w-${this.ui.percent}`;
         }else if(this.health > 50){
             this.health = 0;
         }
@@ -316,10 +318,10 @@ class Jaden {
     healthPU(pu, scene){
         if(pu != null){
             if(this.player.object.position.x >= -20 && this.player.object.position.x <= 20){
-                alert('Power up health taken by player 1');
+                // alert('Power up health taken by player 1');
                 scene.remove(pu.getObject());
                 this.ui.percent += 25;
-                this.ui.health.className = `progress-bar bg-danger w-${this.ui.percent}`;
+                document.querySelector(`#character-${this.side}h`).className = `progress-bar bg-danger w-${this.ui.percent}`;
                 this.ui.healup.className = 'd-inline';
                 return true //POWER UP TAKEN;
             }
@@ -331,7 +333,7 @@ class Jaden {
     speedPU(pu, scene){
         if(pu != null){
             if(this.player.object.position.x >= -20 && this.player.object.position.x <= 20){
-                alert("Power up speed taken by player 1");
+                // alert("Power up speed taken by player 1");
                 scene.remove(pu.getObject());
                 this.speed += 20;
                 this.ui.speed.className = 'd-inline';
@@ -341,5 +343,4 @@ class Jaden {
             return false; //NOT TAKEN
         }
     }
-
 }

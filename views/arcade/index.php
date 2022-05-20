@@ -1,4 +1,82 @@
+
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <title>Fighter Jam | Arcade</title>
+
+    <style>
+        h1{
+            font-family:'Shadows Into Light', cursive;
+        }
+
+        #timer{
+            font-family: 'Shadows Into Light', cursive;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container-expand-lg">
+
+    </div>
+
+    <script src="<?php echo '../views/public/libs/three.min.js' ?>"></script>
+    <script src="<?php echo '../views/public/libs/FBXLoader.js' ?>"></script>
+    <script src="<?php echo '../views/public/libs/Character.js' ?>"></script>
+    <script src="<?php echo '../views/public/libs/Rage.js' ?>"></script>
+    <script src="<?php echo '../views/public/libs/Health.js' ?>"></script>
+    <script src="<?php echo '../views/public/libs/Speed.js' ?>"></script>
+    <script src="<?php echo '../views/public/libs/singleplayer.js' ?>"></script>
+    <script src="<?php echo '../views/public/libs/gameUI.js' ?>"></script>
+    <script src="<?php echo '../views/public/libs/inflate.min.js' ?>"></script>
+    <script src="<?php echo '../views/public/libs/Jaden.js' ?>"></script>
+    <script src="<?php echo '../views/public/libs/Morrison.js' ?>"></script>
+    <script src="<?php echo '../views/public/libs/Booker.js' ?>"></script>
+
+
+    <script>
+        
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            const container = document.querySelector('.container-expand-lg');
+            const ui = UI();
+            const playerui = PlayerWidget(0);
+            const playerui1 = PlayerWidget(1);
+            const timer = Timer();
+            ui.append(playerui, timer, playerui1);
+            container.append(ui);
+
+            
+            const game = new Singlepalyer();
+            window.game = game;
+
+            window.addEventListener('keydown', function (e) {
+                game.playerOneController(e);
+                // game.playerTwoController(e);
+            });
+        })
+    </script>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -91,7 +169,7 @@
     </div>
 
 
-    <script src="<?php echo '../views/public/libs/three.min.js' ?>"></script>
+    <<script src="<?php echo '../views/public/libs/three.min.js' ?>"></script>
     <script src="<?php echo '../views/public/libs/FBXLoader.js' ?>"></script>
     <script src="<?php echo '../views/public/libs/game.js' ?>"></script>
     <script src="<?php echo '../views/public/libs/inflate.min.js' ?>"></script>
@@ -102,13 +180,12 @@
     <script src="<?php echo '../views/public/libs/Health.js' ?>"></script>
     <script src="<?php echo '../views/public/libs/Speed.js' ?>"></script>
 
-
     <script>
 
         //get health bar
         //get name and player
 
-       /*  document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
 
             const UI = {
                 healthp1: document.querySelector("#healthp1"),
@@ -204,7 +281,7 @@
 
             return container;
 
-        } */
+        }
 
 
 
@@ -217,4 +294,4 @@
 
 </body>
 
-</html>
+</html> -->
