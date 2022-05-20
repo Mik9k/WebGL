@@ -2,33 +2,39 @@
     "modes" : [
         {
             "mode": "arcade",
-            "href": "arcade.html",
-            "text": "ARCADE MODE"
+            "href": "http://localhost:8080/arcade",
+            "text": "ARCADE MODE",
+            "description": "This game mode is for those who want to have a good time, defeat their greatest enemies one after another to win the title of world champion, the most courageous fighter of all time."
         },
         { 
             "mode": "versus",
             "href": "#",
-            "text": "VERSUS MODE"
+            "text": "VERSUS MODE",
+            "description": "FIGHT FACE TO FACE WITH YOUR HIGEST RIVAL, CRUSH HIM AND MAKE BITE THE DUST OF YOUR FIST, SHOW HIM HOW BLUE STEEL FEEL."
         },
         { 
             "mode": "traning",
             "href": "#",
-            "text": "TRANING MODE"
+            "text": "TRANING MODE",
+            "description": "GET BETTER AND BETTER, IMPROVE YOUR MOVES, BECOME INTO THE HIGEST FIGHTER OF ALL TIMES TO WIN A WORLD CUP. TIME AND PRACTICE MAKE MASTERS."
         },
         { 
             "mode": "settings",
             "href": "#",
-            "text": "SETTINGS"
+            "text": "SETTINGS",
+            "description":"CHANGE MUSIC AND SCREEN SETTINGS."
         },
         { 
-            "mode": "session",
+            "mode": "login",
             "href": "#",
-            "text": "LOGIN"
+            "text": "LOGIN",
+            "description": "LOGIN AND GET YOU INTO WORLD WIDE SCORE CHART."
         },
         { 
-            "mode": "start",
+            "mode": "signin",
             "href": "#",
-            "text": "SIGN IN" 
+            "text": "SIGN IN",
+            "description": "SIGNIN FOR AN ACCOUNT AND GET YOU INTO WORLD WIDE SCORE CHART"
         }
     
     ]

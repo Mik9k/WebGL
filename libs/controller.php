@@ -15,7 +15,7 @@ class Controller{
         }
     }
 
-    public function e_POST(){
+    public function e_POST($params){
         foreach($params as $param){
             if(!isset($_POST[$param])){
                 error_log('EPOST: PARAM '.$param.' DOESNT EXISTS');
@@ -26,7 +26,7 @@ class Controller{
         return true;
     }
 
-    public function e_GET(){
+    public function e_GET($params){
         foreach($params as $param){
             if(!isset($_GET[$param])){
                 error_log('EPOST: PARAM '.$param.' DOESNT EXISTS');

@@ -51,7 +51,7 @@ div.row>h2 {
 	padding-left: 42px;
 }
 
-#character div>p {
+#description > p {
 	font-family: 'Shadows Into Light', cursive;
 	color: white;
 }

@@ -19,6 +19,7 @@ require_once 'libs/view.php';
 require_once 'helpers/session.php';
 
 require_once 'controllers/menu.php';
+require_once 'controllers/arcade.php';
 
 
 //include 'models/menu.php';

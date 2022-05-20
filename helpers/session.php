@@ -20,5 +20,9 @@ class SessionController extends Controller{
     public function getSession(){
         return isset($_SESSION['PLAYER']) ? $_SESSION['PLAYER'] : null;
     }
+
+    public function initSession($email){
+        $_SESSION['PLAYER'] = $email;
+    }
 }
 ?>

@@ -42,8 +42,7 @@ class Game{
                     echo 'Method Doesnt Exist';
                 }
             }else{
-                echo 'solo el conctronlador';
-                //$controller->render();
+                $controller->render();
             }
         }else{
             echo 'Method Doesnt Exist';

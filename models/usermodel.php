@@ -44,6 +44,30 @@ class UserModel{
 
 	}
 
+	public function login($email, $pwd){
+		$sql = "select * from PLAYER where EMAIL = '".$email."' and PWD = '".$pwd."'";
+		$result = mysqli_query($this->conn, $sql);
+
+		if(mysqli_num_rows($result) > 0){
+			if($row = mysqli_fetch_assoc($result)){
+				$this->email = $row['EMAIL'];
+				$this->nickname = $row['NICKNAME'];
+				$this->score = $row['SOCRE'];
+				$this->country = $row['CONTRY'];
+
+
+				mysqli_close($this->conn);
+
+				return true;
+			}
+		}
+	}
+
+	public function signin($email, $pwd, $nickname){
+		$sql = "INSERT INTO PLAYER (EMAIL, NICKNAME, PWD) VALUES ('".$email."','".$pwd."','".$nickname."')";
+		$result = mysqli_query($this->conn, $sql);
+	}
+
 	public function serialize(){
 		return array(
 			'EMAIL' => $this->email,

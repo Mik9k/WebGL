@@ -46,9 +46,128 @@
 				<div class="row">
 					<h2 class="text-white text-center">MENU MODE</h2>
 				</div>
+				<div class="row">
+					<div id="menu-container" class="m-5 col-3">
+						<!-- MENU ITEMS -->
+					</div>
+					<div id="description" class="col-6 d-flex">
+						<p class="h3 my-auto"></p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
+
+	<!-- SIGN IN -->
+	<div class="modal fade" id="signin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Sign in</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form action="<?php echo constant('base_url'); ?>/menu/signin" method="POST">
+						<div class="mb-3 row">
+							<label for="l-email" type="email" class="col-sm-2 col-form-label">Email</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="s-email" name="s-email">
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<label for="l-pwd" class="col-sm-2 col-form-label">Password</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="s-pwd" name="s-pwd">
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<label for="l-pwd" class="col-sm-2 col-form-label">Nickname</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="s-nickname" name="s-nickname">
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<input type="submit" class="btn btn-primary"value="Sign in">
+						</div>
+					</form>
+				</div>
+				<div csass="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- LOG IN -->
+	<div class="modal fade" id="login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Login</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form action="<?php echo constant('base_url') ?>/menu/login" method="POST">
+						<div class="mb-3 row">
+							<label for="l-email" type="email" class="col-sm-2 col-form-label">Email</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="l-email" name="l-email">
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<label for="l-pwd" class="col-sm-2 col-form-label">Password</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="l-pwd" name="l-pwd">
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<input type="submit" class="btn btn-primary" value="Login">
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- SETTINGS -->
+	<div class="modal fade" id="settings" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Settings</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<h3 class="btn btn-primary" data-bs-toggle="collapse" href="#reprodlist" role="button" aria-expanded="false" aria-controls="collapseExample">
+							Change Music</h3>
+					</div>
+					<div class="row">
+						<ul id="reprodlist" class="collapse list-group" id="collapseExample">
+						</ul>
+					</div>
+					<div class="row">
+						<div id="mediaplayer" class="col justify-content-center d-flex rounded-pill bg-info p-3">
+							<h6 class="text-center">Whatcher-DR DREE 2001</h6>
+							<audio controls autoplay>
+								<source src="">
+							</audio>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 	<!-- JS BOOTSTRAP -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
