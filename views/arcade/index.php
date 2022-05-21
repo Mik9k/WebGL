@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -74,9 +74,9 @@
     </script>
 
 </body>
-</html>
+</html> -->
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -164,12 +164,20 @@
                     <img src="assets/icons/running.png" class="d-none" id="p1speedpu" width="64" height="64" alt="">
                 </span>
             </div>
-        </div>
+        </div><!-- 
+        <div class="row">
+            <div id="mediaplayer" class="col justify-content-center d-flex rounded-pill bg-info p-3">
+                <h6 class="text-center"></h6>
+                <audio controls autoplay>
+                    <source src="">
+                </audio>
+            </div>
+        </div> -->
     </div>
     </div>
 
 
-    <<script src="<?php echo '../views/public/libs/three.min.js' ?>"></script>
+    <script src="<?php echo '../views/public/libs/three.min.js' ?>"></script>
     <script src="<?php echo '../views/public/libs/FBXLoader.js' ?>"></script>
     <script src="<?php echo '../views/public/libs/game.js' ?>"></script>
     <script src="<?php echo '../views/public/libs/inflate.min.js' ?>"></script>
@@ -187,6 +195,14 @@
 
         document.addEventListener("DOMContentLoaded", function () {
 
+            /* let author = document.querySelector('#mediaplayer > h6');
+            let track = document.querySelector('audio > source');
+            let player = document.querySelector('audio');
+            author.textContent = `${localStorage.getItem('current_sound_name')} - ${localStorage.getItem('current_sound_artist')} ${localStorage.getItem('current_sound_album')}`;
+            track.src =localStorage.getItem('current_sound');
+            player.load();
+            player.play();
+ */
             const UI = {
                 healthp1: document.querySelector("#healthp1"),
                 p1name: document.querySelector("#p1name"),
@@ -294,4 +310,4 @@
 
 </body>
 
-</html> -->
+</html>

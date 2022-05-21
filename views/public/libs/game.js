@@ -333,7 +333,7 @@ class Game {
             game.pu.speed = new Speed('#7bf011', new THREE.Vector3(0, 450, 0));
             game.scene.add(game.pu.speed.getObject());
         }else if(game.time < (appear - disapear) && game.pu.speed != null){
-            game.scene.remove(game.pu.speed.getDelta());
+            game.scene.remove(game.pu.speed.getObject());
             game.pu.speed = null;
         }
     }
