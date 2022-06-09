@@ -5,30 +5,30 @@ $('document').ready(function() {
 })
 
 function getUser(){
-    $.get('http://localhost:8080/menu/getUser', function(data, stat){
+    $.get('init.json', function(data, stat){
 
-        let user;
+        // let user;
 
         $('#spinner').remove();
-        data = JSON.parse(data);
+        // data = JSON.parse(data);
         console.log(data);
 
         
-        ({ player, modes, tracks } = data);
+        ({ modes, soundtrack } = data);
 
-        setTrack(tracks, 1);
+        setTrack(data, 1);/* 
         
         if(player != null){
             user = new Player(player.EMAIL, player.NICKNAME, player.SCORE, player.COUNTRY);
             console.log('user', user);
-        }
+        } */
 
         console.log(localStorage.getItem('soundtrack'));
         
-        tracksList(tracks);
-        changeTrack(tracks);
-        menu(modes, player);
-        options(modes);
+        tracksList(data);
+        changeTrack({soundtrack} = data);
+        menu(data);
+        options(data);
     })
 }
 

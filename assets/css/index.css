@@ -2,7 +2,7 @@ body {
 	background-color: #3b8bf9;
 	padding: 0px;
 	margin: 0px;
-	background-image: url('../icons/worldwide.png');
+	background-image: url('/assets/img/icons/worldwide.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 920px;

@@ -1,0 +1,66 @@
+{
+    "modes" : [
+        { 
+            "mode": "versus",
+            "href": "versus.html",
+            "text": "VERSUS MODE",
+            "description": "FIGHT FACE TO FACE WITH YOUR HIGEST RIVAL, CRUSH HIM AND MAKE BITE THE DUST OF YOUR FIST, SHOW HIM HOW BLUE STEEL FEEL."
+        },
+        { 
+            "mode": "traning",
+            "href": "traning.html",
+            "text": "TRANING MODE",
+            "description": "GET BETTER AND BETTER, IMPROVE YOUR MOVES, BECOME INTO THE HIGEST FIGHTER OF ALL TIMES TO WIN A WORLD CUP. TIME AND PRACTICE MAKE MASTERS."
+        },
+        { 
+            "mode": "settings",
+            "href": "#",
+            "text": "SETTINGS",
+            "description":"CHANGE MUSIC AND SCREEN SETTINGS."
+        },
+        { 
+            "mode": "login",
+            "href": "#",
+            "text": "Players name",
+            "description": "LOGIN AND GET YOU INTO WORLD WIDE SCORE CHART."
+        },
+        { 
+            "mode": "signin",
+            "href": "#",
+            "text": "Score chart",
+            "description": "SIGNIN FOR AN ACCOUNT AND GET YOU INTO WORLD WIDE SCORE CHART"
+        }
+    
+    ],
+    "soundtrack" : [
+        {
+            "name":"Watcher",
+            "artist": "DR. DREE",
+            "album" : "2001",
+            "path":"/assets/music/Watcher.mp3",
+            "index": 1
+        },
+        {
+            "name":"Xplosive",
+            "artist": "Xzibit",
+            "album" : "2001",
+            "path":"/assets/music/xplosive.mp3",
+            "index": 2
+        },
+        {
+            "name":"Still dre",
+            "artist": "Snoop Dog",
+            "album" : "2001",
+            "path":"/assets/music/Still-dre.mp3",
+            "index": 3
+        },
+        {
+            "name":"Next Episode",
+            "artist": "Dre",
+            "album" : "2001",
+            "path":"/assets/music/Next-Episode.mp3",
+            "index": 4
+        }
+    ]
+
+}
